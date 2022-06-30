@@ -22,36 +22,34 @@
 
 <body>
    <table>
+      <tr>
+         <?php
+            //adicionando o * como primeiro elemento
+            $table = '<td>*</td>';
+      
+            // adicionando a linha de 0 a 9
+            for ($i=0; $i < 10; $i++) { 
+               $table .= '<td>'.$i.'</td>';
+            };
+         ?>
+      </tr>
       <?php
-         //adicionando linha na tabela
-         $tabela.= '<tr>';
-
-         //adicionando o * como primeiro elemento
-         $tabela.= '<td>*</td>';
-
-         // adicionando a linha de 0 a 9
-         for ($i=0; $i < 10; $i++) { 
-            $tabela .= '<td>'.$i.'</td>' ;
-         };
-
-         // fechando tag da linha
-         $tabela.= '</tr>';
-
-         // for que adiciona a coluna de 0 a 9
+        // for que adiciona a coluna de 0 a 9
          for ($i=0; $i < 10; $i++) { 
             //criando nova linha e elemento (de 0 a 9)
-            $tabela.= '<tr><td>' . $i;
+            $table .= '<tr><td>' . $i;
 
             //for que adiciona a tabuada do numero referente a linha "i"
             for ($j=0; $j < 10; $j++) { 
                $result = $j*$i;
-               $tabela .= '<td>'.$result.'</td>';
+               $table .= '<td>'.$result.'</td>';
             };
+
             // fechando tag do elemento e linha
-            $tabela.='</td></tr>';
+            $table.='</td></tr>';
          };
          //printa a tabela
-         echo $tabela;
+         echo $table;
       ?>
    </table>
 </body>
